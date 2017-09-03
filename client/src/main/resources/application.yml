@@ -1,0 +1,20 @@
+spring:
+  main:
+    web-environment: false
+
+views:
+  fxmlname:
+    root: /view/Home.fxml
+    register: /view/Register.fxml
+    search: /view/Search.fxml
+    searchresult: /view/SearchResult.fxml
+  searchresult:
+    cellsize: 10
+
+serverside:
+  baseurl: http://localhost:8080
+  connecttimeout: 3000
+  readtimeout: 5000
+  username: pikotaro
+  password: ppap
+
