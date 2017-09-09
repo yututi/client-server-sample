@@ -46,8 +46,7 @@ public class UserManagementService {
 		Page<UserInfoEntity> result = repository.findAll(Example.of(example, matcher),
 				new PageRequest(page, size, Direction.ASC, "name"));
 
-		return PageableUserInfo.create(
-				result.getContent().stream().map(e -> e.toJsonObject()).collect(Collectors.toList()),
-				result.getNumber(), result.getTotalPages());
+		return PageableUserInfo.create(result.getContent().stream().peek(System.out::println)
+				.map(e -> e.toJsonObject()).collect(Collectors.toList()), result.getNumber(), result.getTotalPages());
 	}
 }

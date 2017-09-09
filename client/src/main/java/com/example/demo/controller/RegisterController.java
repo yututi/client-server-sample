@@ -79,6 +79,7 @@ public class RegisterController {
 
 		// 初期選択
 		tglMale.setSelected(true);
+		info.setGender(Gender.Male);
 
 		// 年齢テキストフィールドには数字しか入力できないようにする
 		age.setTextFormatter(numberFormatter);

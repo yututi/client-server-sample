@@ -45,6 +45,7 @@ public class SearchResultController {
 		TableColumn<ObservableUserInfo, Integer> col2 = new TableColumn<>("age");
 		TableColumn<ObservableUserInfo, String> col3 = new TableColumn<>("gender");
 		col1.setCellValueFactory(new PropertyValueFactory<ObservableUserInfo, String>("name"));
+		col2.setCellValueFactory(new PropertyValueFactory<ObservableUserInfo, Integer>("age"));
 		col3.setCellValueFactory(new PropertyValueFactory<ObservableUserInfo, String>("gender"));
 
 		table.getColumns().add(col1);

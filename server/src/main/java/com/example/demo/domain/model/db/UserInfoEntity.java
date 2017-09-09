@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Index;
 import javax.persistence.Table;
 
 import com.example.demo.model.Gender;
@@ -11,13 +12,14 @@ import com.example.demo.model.UserInfo;
 
 import lombok.Data;
 
-@Table(name = "USER")
+@Table(name = "USER", indexes = @Index(columnList = "name"))
 @Entity
 @Data
 public class UserInfoEntity {
 	@Id
 	@GeneratedValue
 	private Long id;
+
 	@Column(name = "name")
 	private String name;
 
