@@ -1,0 +1,22 @@
+security:
+  user:
+    name: pikotaro
+    password: ppap
+    role: admin
+    
+
+spring:
+  datasource:
+    data-username: jajajasfdasfs
+    data-password: gjigersdsi
+    initialize: true
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:./db
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+logging:
+    file: ./logs/myapp.log
+    level:
+        org.springframework.web: DEBUG

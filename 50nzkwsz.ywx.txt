@@ -1,0 +1,81 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	deleted:    client/.gitignore
+#	deleted:    client/.mvn/wrapper/maven-wrapper.jar
+#	deleted:    client/.mvn/wrapper/maven-wrapper.properties
+#	deleted:    client/mvnw
+#	deleted:    client/mvnw.cmd
+#	deleted:    client/pom.xml
+#	deleted:    client/src/main/java/com/example/demo/ClientApplication.java
+#	deleted:    client/src/main/java/com/example/demo/configuration/CommonConfiguration.java
+#	deleted:    client/src/main/java/com/example/demo/configuration/FXMLConfiguration.java
+#	deleted:    client/src/main/java/com/example/demo/controller/HomeController.java
+#	deleted:    client/src/main/java/com/example/demo/controller/RegisterController.java
+#	deleted:    client/src/main/java/com/example/demo/controller/SearchController.java
+#	deleted:    client/src/main/java/com/example/demo/controller/SearchResultController.java
+#	deleted:    client/src/main/java/com/example/demo/jfx/FXMLLoaderService.java
+#	deleted:    client/src/main/java/com/example/demo/jfx/JavaFxContext.java
+#	deleted:    client/src/main/java/com/example/demo/jfx/NameBasedVCMapper.java
+#	deleted:    client/src/main/java/com/example/demo/jfx/VCMapper.java
+#	deleted:    client/src/main/java/com/example/demo/model/NodeHolder.java
+#	deleted:    client/src/main/java/com/example/demo/model/TabPaneAccessor.java
+#	deleted:    client/src/main/java/com/example/demo/model/fxcomponents/ExceptionDialog.java
+#	deleted:    client/src/main/java/com/example/demo/model/fxcomponents/HttpErrorDialog.java
+#	deleted:    client/src/main/java/com/example/demo/model/restcommunication/RequestExchanger.java
+#	deleted:    client/src/main/java/com/example/demo/model/restcommunication/RestCommunicationService.java
+#	deleted:    client/src/main/java/com/example/demo/model/restcommunication/RestTemplateFactory.java
+#	deleted:    client/src/main/resources/META-INF/additional-spring-configuration-metadata.json
+#	deleted:    client/src/main/resources/application.yml
+#	deleted:    client/src/main/resources/view/Home.fxml
+#	deleted:    client/src/main/resources/view/Register.fxml
+#	deleted:    client/src/main/resources/view/Search.fxml
+#	deleted:    client/src/main/resources/view/SearchResult.fxml
+#	deleted:    client/src/test/java/com/example/demo/ClientApplicationTests.java
+#	deleted:    common/.gitignore
+#	deleted:    common/.mvn/wrapper/maven-wrapper.jar
+#	deleted:    common/.mvn/wrapper/maven-wrapper.properties
+#
+# Changes not staged for commit:
+#	deleted:    common/mvnw
+#	deleted:    common/mvnw.cmd
+#	deleted:    common/pom.xml
+#	deleted:    common/src/main/java/com/example/demo/model/Gender.java
+#	deleted:    common/src/main/java/com/example/demo/model/PageableUserInfo.java
+#	deleted:    common/src/main/java/com/example/demo/model/UserInfo.java
+#	deleted:    common/src/main/java/com/example/demo/model/UserInfoRequest.java
+#	deleted:    common/src/main/java/com/example/demo/restrequest/Pageable.java
+#	deleted:    common/src/main/java/com/example/demo/restrequest/PageableResponse.java
+#	deleted:    common/src/main/java/com/example/demo/restrequest/PageableRestRequest.java
+#	deleted:    common/src/main/java/com/example/demo/restrequest/ResponsePage.java
+#	deleted:    common/src/main/java/com/example/demo/restrequest/RestRequest.java
+#	deleted:    common/src/main/resources/application.properties
+#	deleted:    common/src/test/java/com/example/demo/CommonFwApplicationTests.java
+#	modified:   root/pom.xml
+#	deleted:    server/.gitignore
+#	deleted:    server/.mvn/wrapper/maven-wrapper.jar
+#	deleted:    server/.mvn/wrapper/maven-wrapper.properties
+#	deleted:    server/mvnw
+#	deleted:    server/mvnw.cmd
+#	deleted:    server/pom.xml
+#	deleted:    server/src/main/java/com/example/demo/ServerApplication.java
+#	deleted:    server/src/main/java/com/example/demo/application/UsersController.java
+#	deleted:    server/src/main/java/com/example/demo/configuration/SecurityConfig.java
+#	deleted:    server/src/main/java/com/example/demo/domain/ExceptionHandler.java
+#	deleted:    server/src/main/java/com/example/demo/domain/model/db/UserInfoEntity.java
+#	deleted:    server/src/main/java/com/example/demo/domain/repository/UserInfoRepository.java
+#	deleted:    server/src/main/java/com/example/demo/domain/service/UserManagementService.java
+#	deleted:    server/src/main/resources/application.yml
+#	deleted:    server/src/main/resources/schema.sql
+#	deleted:    server/src/test/java/com/example/demo/ServerApplicationTests.java
+#
+# Untracked files:
+#	root/client/
+#	root/common/
+#	root/server/
+#
+

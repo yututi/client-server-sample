@@ -1,0 +1,92 @@
+{"properties": [
+  {
+    "name": "javafx.rootfxml",
+    "type": "java.lang.String",
+    "description": "A description for 'javafx.rootfxml'"
+  },
+  {
+    "name": "views.fxmlname.register",
+    "type": "java.lang.String",
+    "description": "A description for 'views.fxmlname.register'"
+  },
+  {
+    "name": "views.fxmlname.search",
+    "type": "java.lang.String",
+    "description": "A description for 'views.fxmlname.search'"
+  },
+  {
+    "name": "severside.baseurl",
+    "type": "java.lang.String",
+    "description": "A description for 'severside.baseurl'"
+  },
+  {
+    "name": "views.fxmlname.root",
+    "type": "java.lang.String",
+    "description": "A description for 'views.fxmlname.root'"
+  },
+  {
+    "name": "severside.host",
+    "type": "java.lang.String",
+    "description": "A description for 'severside.host'"
+  },
+  {
+    "name": "severside.port",
+    "type": "java.lang.String",
+    "description": "A description for 'severside.port'"
+  },
+  {
+    "name": "serverside.host",
+    "type": "java.lang.String",
+    "description": "A description for 'serverside.host'"
+  },
+  {
+    "name": "serverside.port",
+    "type": "java.lang.String",
+    "description": "A description for 'serverside.port'"
+  },
+  {
+    "name": "serverside.protocol",
+    "type": "java.lang.String",
+    "description": "A description for 'serverside.protocol'"
+  },
+  {
+    "name": "serverside.baseurl",
+    "type": "java.lang.String",
+    "description": "A description for 'serverside.baseurl'"
+  },
+  {
+    "name": "serverside.connecttimeout",
+    "type": "java.lang.String",
+    "description": "A description for 'serverside.connecttimeout'"
+  },
+  {
+    "name": "serverside.readtimeout",
+    "type": "java.lang.String",
+    "description": "A description for 'serverside.readtimeout'"
+  },
+  {
+    "name": "servreside.username",
+    "type": "java.lang.String",
+    "description": "A description for 'servreside.username'"
+  },
+  {
+    "name": "serverside.password",
+    "type": "java.lang.String",
+    "description": "A description for 'serverside.password'"
+  },
+  {
+    "name": "serverside.username",
+    "type": "java.lang.String",
+    "description": "A description for 'serverside.username'"
+  },
+  {
+    "name": "views.searchresult.cellsize",
+    "type": "java.lang.String",
+    "description": "A description for 'views.searchresult.cellsize'"
+  },
+  {
+    "name": "views.fxmlname.searchresult",
+    "type": "java.lang.String",
+    "description": "A description for 'views.fxmlname.searchresult'"
+  }
+]}
