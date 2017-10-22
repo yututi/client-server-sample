@@ -30,7 +30,7 @@ public class FXMLConfiguration {
 
 	public static final Pattern notNumberPattern = Pattern.compile("[^0-9]+");
 
-	// テキストに数字しか入力できないようにするフォーマッタ。スレッドアンセーフ？なのか1インスタンスを複数のコントローラに設定できないのでスコープはプロトタイプ
+	// テキストに数字しか入力できないようにするフォーマッタ。スレッドアンセーフなのか1インスタンスを複数のコントローラに設定できないのでスコープはプロトタイプ
 	@Scope(BeanDefinition.SCOPE_PROTOTYPE)
 	@Bean(name="numberFormatter")
 	public TextFormatter<String> getNumTextFormatter() {

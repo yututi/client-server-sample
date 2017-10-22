@@ -21,9 +21,11 @@ import javafx.scene.control.TabPane;
 @Component
 public class HomeController {
 
+	// 登録画面FXMLのパス
 	@Value("${views.fxmlname.register}")
 	Path registerfxml;
 
+	// 検索画面FXMLのパス
 	@Value("${views.fxmlname.search}")
 	Path searchfxml;
 
@@ -32,7 +34,7 @@ public class HomeController {
 
 	@FXML
 	private TabPane multipurposeTab;
-	
+
 	@Autowired
 	private TabPaneAccessor tabAccesspr;
 
@@ -41,16 +43,20 @@ public class HomeController {
 		tabAccesspr.init(multipurposeTab);
 	}
 
+	// registerボタン押下時
 	@FXML
 	void onRegisterAction(ActionEvent event) {
+		// 登録画面をタブに追加
 		Tab tab = new Tab("register");
 		Node node = loader.load(registerfxml);
 		tab.setContent(node);
 		tabAccesspr.addAndFocus(tab);
 	}
 
+	// searchボタン押下時
 	@FXML
 	void onSearchAction(ActionEvent event) {
+		// 検索画面をタブに追加
 		Tab tab = new Tab("search");
 		Node node = loader.load(searchfxml);
 		tab.setContent(node);

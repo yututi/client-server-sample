@@ -31,10 +31,13 @@ public class SearchResultController {
 
 	@Autowired
 	private RequestExchanger requestExchanger;
-	
+
+	// 検索結果1ページあたりに表示する項目数
 	@Value("${views.searchresult.cellsize}")
 	private int cellSize;
 
+	// 検索結果のキャッシュ
+	// 描画スレッドからしかアクセスしないのでHashMapを使う
 	private Map<Integer, List<ObservableUserInfo>> cachedTabelData = new HashMap<>();
 
 	public void initialize(UserInfo request) {
@@ -51,7 +54,7 @@ public class SearchResultController {
 		table.getColumns().add(col1);
 		table.getColumns().add(col2);
 		table.getColumns().add(col3);
-		
+
 		// FIXME 初回表示時に先頭ページへの遷移が2回発生する。setPageCountのせいでイベントが無駄に発火されている？
 		pagenation.setPageFactory((page) -> {
 			pagenation.setDisable(true);
@@ -69,31 +72,30 @@ public class SearchResultController {
 			// キャッシュになければサーバーから取得
 			requestExchanger.requestPage(req, page, cellSize)
 
-			// 取得成功時はレスポンスの内容をテーブルに設定
-			.onSuccess(response -> {
+					// 取得成功時はレスポンスの内容をテーブルに設定
+					.onSuccess(response -> {
 
-				List<UserInfo> infolist = response.getContent();
-				List<ObservableUserInfo> obsList = new ArrayList<>(infolist.size());
+						List<UserInfo> infolist = response.getContent();
+						List<ObservableUserInfo> obsList = new ArrayList<>(infolist.size());
 
-				for (UserInfo info : infolist) {
-					obsList.add(ObservableUserInfo.create(info));
-				}
+						for (UserInfo info : infolist) {
+							obsList.add(ObservableUserInfo.create(info));
+						}
 
-				table.getItems().clear();
-				table.getItems().addAll(obsList);
-				pagenation.setPageCount(response.getPageInfo().getMaxPage());
-				pagenation.setDisable(false);
+						table.getItems().clear();
+						table.getItems().addAll(obsList);
+						pagenation.setPageCount(response.getPageInfo().getMaxPage());
+						pagenation.setDisable(false);
 
-				// キャッシュする
-				cachedTabelData.put(page, obsList);
-			})
-			// 通信失敗、またはエラーが返却された場合はエラーダイアログ表示
-			.onFailure((response, http) -> {
-				new HttpErrorDialog(http).showAndWait();
-			})
-			.onError(e -> {
-				new ExceptionDialog(e).showAndWait();
-			}).get();
+						// キャッシュする
+						cachedTabelData.put(page, obsList);
+					})
+					// 通信失敗、またはエラーが返却された場合はエラーダイアログ表示
+					.onFailure((response, http) -> {
+						new HttpErrorDialog(http).showAndWait();
+					}).onError(e -> {
+						new ExceptionDialog(e).showAndWait();
+					}).get();
 
 			return table;
 		});

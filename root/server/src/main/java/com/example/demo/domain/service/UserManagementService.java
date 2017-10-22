@@ -35,10 +35,10 @@ public class UserManagementService {
 	public UserInfo findById(Long id) {
 		UserInfoEntity entity = repository.findOne(id);
 
-		return entity.toJsonObject();
+		return entity.toJsonObj();
 	}
 
-	public PageableUserInfoResponse findAllByNameLike(String name, int page, int size) {
+	public PageableUserInfoResponse findPageByNameLike(String name, int page, int size) {
 
 		UserInfoEntity example = new UserInfoEntity();
 		example.setName(name);
@@ -47,9 +47,9 @@ public class UserManagementService {
 
 		Page<UserInfoEntity> result = repository.findAll(Example.of(example, matcher),
 				new PageRequest(page, size, Direction.ASC, "name"));
-		
+
 		return PageableUserInfoResponse.create(
-				result.getContent().stream().map(e -> e.toJsonObject()).collect(Collectors.toList()),
+				result.getContent().stream().map(e -> e.toJsonObj()).collect(Collectors.toList()),
 				result.getNumber(), result.getTotalPages());
 	}
 }

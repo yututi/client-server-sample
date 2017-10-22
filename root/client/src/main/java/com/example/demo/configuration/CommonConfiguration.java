@@ -13,17 +13,19 @@ import org.springframework.beans.factory.config.CustomEditorConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.example.demo.model.restcommunication.RestTemplateFactory;
-
 @Configuration
 public class CommonConfiguration {
- 
+
 	// @Valueの型解決用bean
 	@Bean
 	public static CustomEditorConfigurer getCustomEditorConfigurer() {
+
 		CustomEditorConfigurer configurer = new CustomEditorConfigurer();
 		Map<Class<?>, Class<? extends PropertyEditor>> map = new HashMap<>();
+
+		// Pathの解決
 		map.put(Path.class, PathPropertyEditor.class);
+
 		configurer.setCustomEditors(map);
 		return configurer;
 	}
@@ -39,11 +41,5 @@ public class CommonConfiguration {
 	@Bean
 	public ExecutorService getExecutorService() {
 		return Executors.newCachedThreadPool();
-	}
-
-	// Rest通信用Bean
-	@Bean
-	public RestTemplateFactory getTemplateFactory(){
-		return new RestTemplateFactory();
 	}
 }

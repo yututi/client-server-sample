@@ -22,20 +22,22 @@ public class UsersController {
 	private UserManagementService userManagementService;
 
 	// ID指定のユーザー個別検索
-	@GetMapping("/users/{id}")
-	@ResponseBody
+	@GetMapping(value = "/users/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody()
 	public UserInfo getByUserId(@PathVariable Long id) {
+
 		UserInfo info = userManagementService.findById(id);
 
 		return info;
 	}
 
 	// ユーザーページ検索
-	@GetMapping("/users")
+	@GetMapping(value = "/users", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public PageableUserInfoResponse getUsers(@RequestParam int page, @RequestParam int size, @RequestParam String name) {
+	public PageableUserInfoResponse getUsers(@RequestParam int page, @RequestParam int size,
+			@RequestParam String name) {
 
-		return userManagementService.findAllByNameLike(name, page, size);
+		return userManagementService.findPageByNameLike(name, page, size);
 	}
 
 	// ユーザー新規登録

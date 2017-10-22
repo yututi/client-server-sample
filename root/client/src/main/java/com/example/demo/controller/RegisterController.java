@@ -59,6 +59,7 @@ public class RegisterController {
 	@Autowired
 	private TextFormatter<String> numberFormatter;
 
+	// 選択されているGenderを保持する
 	private AtomicReference<Gender> gender = new AtomicReference<>();
 
 	@FXML
@@ -79,9 +80,8 @@ public class RegisterController {
 			gender.set(Gender.Male);
 		});
 
-		// 初期選択
+		// トグル初期選択
 		tglMale.setSelected(true);
-		gender.set(Gender.Male);
 
 		// 年齢テキストフィールドには数字しか入力できないようにする
 		age.setTextFormatter(numberFormatter);
@@ -103,7 +103,6 @@ public class RegisterController {
 		boolean isValid = validateInput();
 		if (!isValid) {
 			// 入力情報に不備があれば入力コンポーネントを活性化して終了。
-			// TODO 入力エラーの内容を表示
 			registerPane.getChildren().forEach(child -> child.setDisable(false));
 			return;
 		}
@@ -118,11 +117,11 @@ public class RegisterController {
 
 		// HTTP:POST
 		requestExchanger.request(request)
-				//
+				// 登録成功時はコンポーネントを非活性にしたままにして２重登録を防ぐ
 				.onSuccess(response -> {
 					register.setText("registered");
 				})
-				//
+				//　登録に失敗したらエラーダイアログを表示
 				.onFailure((response, httpstatus) -> {
 					new HttpErrorDialog(httpstatus).showAndWait();
 					registerPane.getChildren().forEach(child -> child.setDisable(false));

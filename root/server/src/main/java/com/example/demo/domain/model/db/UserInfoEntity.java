@@ -38,7 +38,7 @@ public class UserInfoEntity {
 		return entity;
 	}
 
-	public UserInfo toJsonObject() {
+	public UserInfo toJsonObj() {
 		UserInfo info = UserInfo.builder()
 				.id(id)
 				.name(name)
